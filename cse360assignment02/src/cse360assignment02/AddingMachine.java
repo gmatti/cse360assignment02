@@ -7,8 +7,8 @@ package cse360assignment02;
  */
 public class AddingMachine 
 {
-	
 	 private int total;
+	 private String hist = "0";
 	 
 	 /**
 	  * AddingMachine default constructor 
@@ -24,7 +24,7 @@ public class AddingMachine
 	  */
 	 public int getTotal () 
 	 {
-	    return 0;
+	    return total;
 	 }
 	 
 	 /**
@@ -33,6 +33,8 @@ public class AddingMachine
 	  */
 	 public void add (int value) 
 	 {
+		 total = total + value;
+		 hist = hist + " + " + value;
 		 
 	 }
 	 
@@ -42,22 +44,25 @@ public class AddingMachine
 	  */
 	 public void subtract (int value) 
 	 {
-		 
+		 total = total - value;
+		 hist = hist + " - " + value;
 	 }
 	 
 	 /**
-	  * returns the representation of the value
+	  * returns the representation of the string
 	  */
 	 public String toString () 
 	 {
-	    return "";
+	    return hist;
 	 }
 	 
 	 /**
-	  * 
+	  * clear method will clear the transaction and set it back to 0
 	  */
 	 public void clear() 
 	 {
-		 
+		 //setting the total and the transaction history back to 0
+		 total = 0; 
+		 hist = "0";
 	 }
 }
